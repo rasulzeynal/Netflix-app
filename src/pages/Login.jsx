@@ -41,6 +41,11 @@ const Container = styled.div`
             border-radius: 0.2rem;
             font-weight: bolder;
             font-size: 1.05rem;
+            transition: all 0.3s ease-in-out;
+
+            &:hover{
+              background-color: #8b370999;
+            }
           }
         }
       }
