@@ -13,7 +13,7 @@ const Container = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     height: 100vh;
     width: 100vw;
     display: grid;
@@ -24,7 +24,6 @@ const Container = styled.div`
       .form{
         padding: 2rem;
         background-color: #000000b0;
-        width: 25vw;
         gap: 2rem;
         color: white;
         .container{
@@ -46,7 +45,6 @@ const Container = styled.div`
         }
       }
     }
-    
   }
 `;
 
