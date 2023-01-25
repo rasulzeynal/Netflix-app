@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from "../components/Navbar";
-import backgroundImage from "../assets/home.jpg";
-import MovieLogo from "../assets/homeTitle.webp";
+import backgroundImage from "../assets/maxresdefault.jpg";
+import MovieLogo from "../assets/title.png";
 import {FaPlay} from "react-icons/fa";
 import {AiOutlineInfoCircle} from "react-icons/ai";
 import styled from 'styled-components';
@@ -16,7 +16,7 @@ background-color: black;
 .hero{
   position: relative;
   .background-image{
-    filter: brightness(60%);
+    
   }
   img{
     height: 100vh;
