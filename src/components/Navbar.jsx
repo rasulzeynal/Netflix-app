@@ -18,7 +18,7 @@ const Container = styled.div`
         justify-content: space-between;
         position: fixed;
         z-index: 2;
-        padding: 0 4rem;
+        padding: 0 2rem;
         align-items: center;
         transition: 0.3s ease-in-out;
         .left{
@@ -50,7 +50,7 @@ const Container = styled.div`
                 }
                 svg{
                     color: #f34242;
-                    font-size: 1.2rem;
+                    font-size: 1rem;
                 }
             }
             .search{
@@ -83,7 +83,7 @@ const Container = styled.div`
                 border: 1px solid white;
                 background-color: rgba(0,0,0,0.6);
                 input{
-                    width: 100%;
+                    width: 100px;
                     opacity: 1;
                     visibility: visible;
                     padding: 0.3rem;
@@ -91,6 +91,45 @@ const Container = styled.div`
             }
         }
     }
+    
+    @media (max-width:700px) {
+        nav{
+        padding: 1rem !important ;
+        .left{
+            gap: 0 !important;
+            .brand{
+                img{
+                    height: 2rem !important;
+                }
+            }
+            .links{
+                gap: 0 !important;
+                text-align: start !important;
+                li{
+                    padding: 0.8rem !important;
+                    display: flex;
+                    align-items: flex-start;
+                    a{
+                        font-size: .7rem !important;
+                    }
+                }
+            }
+        }
+        .right{
+            gap: 0.5rem !important;
+            button{
+                display: flex;
+                align-items: center;
+                svg{
+                    font-size: 0.8rem;
+                }
+            }
+            .search{
+                display: none;
+            }
+        }
+    }
+  }
 `;
 
 const Navbar = ({isScrolled}) => {
@@ -130,7 +169,7 @@ const Navbar = ({isScrolled}) => {
         </div> 
         <div className="right flex a-center">
             <div className={`search ${showSearch ? "show-search" : ""}`}>
-                <button onFocus={() => setShowSearch(true)} onBlur={() => {
+            <button onFocus={() => setShowSearch(true)} onBlur={() => {
                     if (!inputHover) setShowSearch(false);
                 }}>
                    <FaSearch/> 
@@ -139,6 +178,7 @@ const Navbar = ({isScrolled}) => {
                     setShowSearch(false);
                     setInputHover(false);
                 }}/>
+   
             </div>
             <button onClick={() => signOut(firebaseAuth)}>
                 <FaPowerOff/>

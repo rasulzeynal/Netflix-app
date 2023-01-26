@@ -24,8 +24,11 @@ const Container = styled.div`
       .form{
         padding: 2rem;
         background-color: #000000b0;
-        gap: 2rem;
+        gap: 1em;
         color: white;
+        .err{
+          color: red;
+        }
         .container{
           gap: 2rem;
           input{
@@ -59,7 +62,7 @@ const Login = () => {
     email: "",
     password: "",
   });
-  /* const [status, setStatus] = useState(undefined); */
+  const [status, setStatus] = useState(undefined);
 
   const handleLogIn = async () => {
     try {
@@ -68,7 +71,7 @@ const Login = () => {
      /*  setStatus("Login successfully") */
     } catch (err) {
       console.log(err);
-     /*  setStatus("Please try again")*/
+      setStatus("Please enter a valid email and password.")
     } 
     }
 
@@ -86,7 +89,7 @@ const Login = () => {
             <div className="title">
               <h3>Login</h3>
             </div>
-           {/*  <p>{status}</p> */}
+            <p className="err">{status}</p>
             <div className="container flex column">
             <input
               type="email"

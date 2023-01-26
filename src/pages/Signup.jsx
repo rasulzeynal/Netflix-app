@@ -26,7 +26,6 @@ const Container = styled.div`
         font-size: 2rem;
       }
       h1 {
-        padding: 0 25rem;
       }
     }
     .form {
@@ -65,6 +64,52 @@ const Container = styled.div`
       font-size: 1.05rem;
     }
   }
+
+  @media (max-width:1450px) {
+    .text{
+      padding: 0 6rem;
+      h1{
+        font-size: 3rem;
+      }
+      h4{
+        font-size:1.625rem ;
+      }
+    }
+  }
+
+  @media (max-width:950px) {
+    .form {
+      display: flex !important;
+      flex-direction: column !important;
+      input {
+        padding: 1.5rem;
+        font-size: 1.2rem;
+        border: 1px solid black;
+        margin-bottom: 1.5rem;
+        border-radius: 0.3rem;
+      }
+      button {
+        padding: 1.5rem 1rem !important;
+      }
+    }
+  }
+
+  
+  @media (max-width:550px) {
+    .text{
+      padding: 0 2rem;
+      h1{
+        font-size: 1.6rem;
+        
+      }
+      h4{
+        font-size:1.2rem ;
+      }
+      h6{
+        font-size: 1.1rem;
+      }
+    }
+  }
 `;
 
 const Signup = () => {
@@ -96,9 +141,9 @@ const Signup = () => {
         <div className="body flex column a-center j-center">
           <div className="text flex column">
             <h1>Unlimited movies, TV shows and more</h1>
-            <h4>Eatch anywhere. Cancel anytime.</h4>
+            <h4>Watch anywhere. Cancel anytime.</h4>
             <h6>
-              Ready to watch? Enter your email to create or restart membership
+              Ready to watch? Enter your email to create or restart membership.
             </h6>
           </div>
           <div className="form">
@@ -115,7 +160,7 @@ const Signup = () => {
               }
             />
             {showPassword && (
-              <input type="password" placeholder="password" name="password" 
+              <input type="password" placeholder="Password" name="password" 
               value={formValues.password}
               onChange={(e) =>
                 setFormValues({
@@ -128,7 +173,12 @@ const Signup = () => {
               <button onClick={() => setShowPassword(true)}>Get Started</button>
             )}
           </div>
-          <button onClick={handleSignIn}>Sign Up</button>
+          {
+            showPassword && (
+              <button onClick={handleSignIn}>Sign Up</button>
+            )
+          }
+          
         </div>
       </div>
     </Container>
