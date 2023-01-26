@@ -15,26 +15,23 @@ const Container = styled.div`
 background-color: black;
 .hero{
   position: relative;
-  .background-image{
-    
-  }
   img{
-    height: 100vh;
     width: 100vw;
   }
   .container{
     position: absolute;
     bottom: 5rem;
+    margin-left: 5rem;
     .logo{
       img{
-        width: 100%;
-        height: 100%;
-        margin-left: 5rem;
+        width: 50vw;
       }
     }
     .buttons{
       margin: 5rem;
+      margin-left: 0;
       gap: 2rem;
+      margin-top: 1rem;
       button{
         font-size: 1.4rem;
         gap: 1rem;
@@ -58,6 +55,33 @@ background-color: black;
       }
     }
   }
+}
+@media (max-width:750px) {
+  .hero{
+  .container{
+    bottom: 1rem;
+    margin-left: 2rem !important;
+    .logo{
+      img{
+        width: 50vw;
+      }
+    }
+    .buttons{
+      margin-top: 1rem !important;
+      margin-bottom: 0.5rem !important;
+      button{
+        font-size: 1.1rem;
+        border-radius: 0.2rem;
+        padding: 0.3rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        &:nth-of-type(2){
+          display: none;
+        }
+      }
+    }
+  }
+}
 }
 `;
 
