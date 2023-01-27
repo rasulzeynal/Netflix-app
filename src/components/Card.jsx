@@ -89,6 +89,11 @@ const Container = styled.div`
       }
     }
   }
+  @media (max-width: 450px) {
+    max-width: 140px;
+    display: flex;
+    flex-wrap: wrap;
+  }
 `;
 
 export default React.memo(function Card({ index, movieData, isLiked = false }) {

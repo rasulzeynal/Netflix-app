@@ -40,6 +40,23 @@ gap: 1rem;
       right: 0;
     }
   }
+
+  @media (max-width:480px) {
+      h1{
+        font-size: 1.1rem;
+        margin-left: 20px;
+      }
+      .wrapper {
+    .slider {
+      margin-left: 20px;
+    }
+    .slider-action {
+      svg {
+        font-size: 1.2rem;
+      }
+    }
+  }
+    }
 `;
 
 const CardSlider = React.memo(({data, title}) => {
